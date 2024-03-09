@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LinkController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/admin/saiwinoo/haha',function(){
+    Artisan::call('migrate:fresh --seed');
+    return 'done';
+});
+
 
 Route::controller(LinkController::class)->group(function () {
     Route::get('/{link}', 'redirectLink');
