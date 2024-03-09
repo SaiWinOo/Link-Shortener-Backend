@@ -15,11 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin/saiwinoo/haha',function(){
-    Artisan::call('migrate:fresh --seed');
-    return 'done';
-});
-
 
 Route::controller(LinkController::class)->group(function () {
     Route::get('/{link}', 'redirectLink');
